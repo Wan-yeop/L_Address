@@ -1,0 +1,251 @@
+object Form1: TForm1
+  Left = 716
+  Height = 963
+  Top = 196
+  Width = 1383
+  Caption = '안국엔지니어링 거래처 관리'
+  ClientHeight = 963
+  ClientWidth = 1383
+  DesignTimePPI = 144
+  LCLVersion = '4.2.0.0'
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 776
+    Top = 40
+    Width = 300
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Width = 40
+        FieldName = 'ID'
+      end    
+      item
+        Title.Caption = 'company_name'
+        Width = 200
+        FieldName = 'COMPANY_NAME'
+      end>
+    DataSource = DM1.DataSource1
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 376
+    Height = 34
+    Top = 47
+    Width = 111
+    Caption = '회사명'
+    Font.CharSet = HANGEUL_CHARSET
+    Font.Color = clBlue
+    Font.Name = '돋움'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 504
+    Height = 38
+    Top = 856
+    Width = 362
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 38
+    ClientWidth = 362
+    DataSource = DM1.DataSource1
+    Options = []
+    TabOrder = 2
+  end
+  object Panel2: TPanel
+    Left = 880
+    Height = 34
+    Top = 48
+    Width = 111
+    Caption = 'Tel.'
+    TabOrder = 3
+  end
+  object Panel3: TPanel
+    Left = 376
+    Height = 34
+    Top = 112
+    Width = 111
+    Caption = 'E-Mail'
+    TabOrder = 4
+  end
+  object Panel4: TPanel
+    Left = 880
+    Height = 34
+    Top = 104
+    Width = 111
+    Caption = 'Fax.'
+    TabOrder = 5
+  end
+  object Panel5: TPanel
+    Left = 368
+    Height = 34
+    Top = 176
+    Width = 111
+    Caption = '담당자'
+    TabOrder = 6
+  end
+  object Panel6: TPanel
+    Left = 880
+    Height = 34
+    Top = 168
+    Width = 111
+    Caption = '연락처'
+    TabOrder = 7
+  end
+  object Panel7: TPanel
+    Left = 368
+    Height = 34
+    Top = 232
+    Width = 111
+    Caption = 'Address'
+    TabOrder = 8
+  end
+  object Panel8: TPanel
+    Left = 368
+    Height = 34
+    Top = 296
+    Width = 111
+    Caption = 'Keywords'
+    TabOrder = 9
+  end
+  object Panel9: TPanel
+    Left = 368
+    Height = 34
+    Top = 352
+    Width = 111
+    Caption = 'Memo'
+    Font.CharSet = HANGEUL_CHARSET
+    Font.Color = clMaroon
+    Font.Name = '맑은 고딕'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 10
+  end
+  object DBEdit1: TDBEdit
+    Left = 496
+    Height = 33
+    Top = 48
+    Width = 336
+    DataField = 'company_name'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 11
+  end
+  object DBEdit2: TDBEdit
+    Left = 1008
+    Height = 33
+    Top = 48
+    Width = 336
+    DataField = 'phone_primary'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 12
+  end
+  object DBEdit3: TDBEdit
+    Left = 496
+    Height = 33
+    Top = 113
+    Width = 336
+    DataField = 'email'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 13
+  end
+  object DBEdit4: TDBEdit
+    Left = 1008
+    Height = 33
+    Top = 105
+    Width = 336
+    DataField = 'fax'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 14
+  end
+  object DBEdit5: TDBEdit
+    Left = 496
+    Height = 33
+    Top = 169
+    Width = 336
+    DataField = 'manager'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 15
+  end
+  object DBEdit6: TDBEdit
+    Left = 1008
+    Height = 33
+    Top = 168
+    Width = 336
+    DataField = 'phone_secondary'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 16
+  end
+  object DBEdit7: TDBEdit
+    Left = 496
+    Height = 33
+    Top = 233
+    Width = 848
+    DataField = 'address'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 17
+  end
+  object DBEdit8: TDBEdit
+    Left = 496
+    Height = 33
+    Top = 296
+    Width = 848
+    DataField = 'keywords'
+    DataSource = DM1.DataSource1
+    MaxLength = 0
+    TabOrder = 18
+  end
+  object DBMemo1: TDBMemo
+    Left = 496
+    Height = 392
+    Top = 352
+    Width = 848
+    DataField = 'memo'
+    DataSource = DM1.DataSource1
+    TabOrder = 19
+  end
+  object Button1: TButton
+    Left = 1224
+    Height = 38
+    Top = 776
+    Width = 113
+    Caption = 'Save'
+    TabOrder = 20
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 1224
+    Height = 38
+    Top = 848
+    Width = 113
+    Caption = 'commit'
+    TabOrder = 21
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 496
+    Height = 38
+    Top = 776
+    Width = 113
+    Caption = 'Open'
+    TabOrder = 22
+    OnClick = Button3Click
+  end
+end

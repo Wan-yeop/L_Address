@@ -1,0 +1,280 @@
+object DM1: TDM1
+  OldCreateOrder = False
+  Height = 753
+  HorizontalOffset = 672
+  VerticalOffset = 425
+  Width = 638
+  PPI = 144
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'COMPANY_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'COMPANY_CEO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'MANAGER'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'PHONE_PRIMARY'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'PHONE_SECONDARY'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ITEMS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'KEYWORDS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'REGISTRATION_DATE'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'MEMO'
+        DataType = ftMemo
+        Precision = -1
+        Size = 2
+      end>
+    Database = IBConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select id,'
+      ' cast(company_name as varchar(50)) as company_name,'
+      ' cast(company_ceo as varchar(30)) as company_ceo,'
+      ' cast(manager as varchar(20)) as manager,'
+      ' cast(phone_primary as varchar(20)) as phone_primary,'
+      ' cast(phone_secondary as varchar(20)) as phone_secondary,'
+      ' cast(fax as varchar(20)) as fax,'
+      ' cast(address as varchar(100)) as address,'
+      ' cast(email as varchar(50)) as email,'
+      ' cast(items as varchar(100)) as items,'
+      ' cast(keywords as varchar(100)) as keywords,'
+      ' registration_date,'
+      ' memo'
+      'from address_book'
+    )
+    UpdateSQL.Strings = (
+      'update address_book'
+      ''
+      'SET'
+      '  company_name = :company_name,'
+      '  company_ceo = :company_ceo,'
+      '  keywords = :keywords,'
+      '  memo = :memo'
+      ''
+      'WHERE'
+      '  id = :id;'
+      ''
+      ''
+      ''
+    )
+    Params = <>
+    Macros = <>
+    UpdateMode = upWhereChanged
+    Left = 136
+    Top = 304
+    object SQLQuery1ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = True
+    end
+    object SQLQuery1COMPANY_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'COMPANY_NAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object SQLQuery1COMPANY_CEO: TStringField
+      FieldKind = fkData
+      FieldName = 'COMPANY_CEO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery1MANAGER: TStringField
+      FieldKind = fkData
+      FieldName = 'MANAGER'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1PHONE_PRIMARY: TStringField
+      FieldKind = fkData
+      FieldName = 'PHONE_PRIMARY'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1PHONE_SECONDARY: TStringField
+      FieldKind = fkData
+      FieldName = 'PHONE_SECONDARY'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1FAX: TStringField
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1ADDRESS: TStringField
+      FieldKind = fkData
+      FieldName = 'ADDRESS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object SQLQuery1EMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object SQLQuery1ITEMS: TStringField
+      FieldKind = fkData
+      FieldName = 'ITEMS'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object SQLQuery1KEYWORDS: TStringField
+      FieldKind = fkData
+      FieldName = 'KEYWORDS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object SQLQuery1REGISTRATION_DATE: TDateField
+      FieldKind = fkData
+      FieldName = 'REGISTRATION_DATE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1MEMO: TMemoField
+      FieldKind = fkData
+      FieldName = 'MEMO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 2
+      Transliterate = False
+    end
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = IBConnection1
+    Left = 312
+    Top = 144
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 288
+    Top = 304
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = IBConnection1AfterConnect
+    DatabaseName = 'C:\Data\MASTERDB.FDB'
+    KeepConnection = False
+    Password = 'masterkey'
+    Transaction = SQLTransaction1
+    UserName = 'SYSDBA'
+    CharSet = 'UTF8'
+    CheckTransactionParams = False
+    UseConnectionCharSetIfNone = False
+    Left = 144
+    Top = 144
+  end
+end

@@ -1,0 +1,152 @@
+object DM1: TDM1
+  OldCreateOrder = False
+  Height = 753
+  HorizontalOffset = 672
+  VerticalOffset = 425
+  Width = 638
+  PPI = 144
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'company_name'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'company_ceo'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'manager'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'phone_primary'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'phone_secondary'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'fax'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'address'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'email'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'items'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'keywords'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'registration_date'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'memo'
+        DataType = ftMemo
+        Precision = -1
+      end>
+    AutoCalcFields = False
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select id,'
+      ' cast(company_name as varchar(50)) as company_name,'
+      ' cast(company_ceo as varchar(30)) as company_ceo,'
+      ' cast(manager as varchar(20)) as manager,'
+      ' cast(phone_primary as varchar(20)) as phone_primary,'
+      ' cast(phone_secondary as varchar(20)) as phone_secondary,'
+      ' cast(fax as varchar(20)) as fax,'
+      ' cast(address as varchar(100)) as address,'
+      ' cast(email as varchar(50)) as email,'
+      ' cast(items as varchar(100)) as items,'
+      ' cast(keywords as varchar(100)) as keywords,'
+      ' registration_date,'
+      ' memo'
+      'from address_book'
+    )
+    UpdateSQL.Strings = (
+      'update address_book'
+      ''
+      'SET'
+      '  company_name = :company_name,'
+      '  company_ceo = :company_ceo,'
+      '  keywords = :keywords,'
+      '  memo = :memo'
+      ''
+      'WHERE'
+      '  id = :id;'
+      ''
+      ''
+      ''
+    )
+    Params = <>
+    Macros = <>
+    UpdateMode = upWhereChanged
+    Left = 136
+    Top = 304
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = IBConnection1
+    Left = 312
+    Top = 144
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 288
+    Top = 304
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = IBConnection1AfterConnect
+    DatabaseName = 'C:\Data\MASTERDB.FDB'
+    KeepConnection = False
+    Password = 'masterkey'
+    Transaction = SQLTransaction1
+    UserName = 'SYSDBA'
+    CheckTransactionParams = False
+    UseConnectionCharSetIfNone = False
+    Left = 144
+    Top = 144
+  end
+end
