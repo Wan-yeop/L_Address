@@ -6,13 +6,18 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, StdCtrls,
-  ExtCtrls, DBCtrls;
+  ExtCtrls, DBCtrls, Buttons;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -68,18 +73,18 @@ begin
 
   // Post를 호출하기 전, 현재 활성 컨트롤의 데이터 변경사항을 데이터셋에 강제로 반영합니다.
   // ActiveControl이 할당되었고 TWinControl을 상속받았는지 확인합니다.
-  if Assigned(ActiveControl) and (ActiveControl is TWinControl) then
-  begin
+  //if Assigned(ActiveControl) and (ActiveControl is TWinControl) then
+  //begin
     // 현재 컨트롤에서 다음 컨트롤로 포커스를 이동시킵니다.
     // 이는 현재 컨트롤의 OnExit 이벤트를 강제로 발생시키는 효과를 가집니다.
     // TDBEdit에 있던 포커스가 빠져나가면서 IME 한글 조합이 완료되고,
     // 해당 내용이 데이터셋 필드에 정상적으로 업데이트됩니다.
-    SelectNext(ActiveControl as TWinControl, True, True);
-  end;
+    //SelectNext(ActiveControl as TWinControl, True, True);
+  //end;
 
 
     dm1.sqlquery1.Post;
-    // dm1.SQLQuery1.ApplyUpdates;
+    dm1.SQLQuery1.ApplyUpdates;
     dm1.SQLTransaction1.CommitRetaining;
 
   //DM1.SQLTransaction1.StartTransaction;

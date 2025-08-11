@@ -6,13 +6,18 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, StdCtrls,
-  ExtCtrls, DBCtrls;
+  ExtCtrls, DBCtrls, Buttons;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -79,7 +84,7 @@ begin
 
 
     dm1.sqlquery1.Post;
-    // dm1.SQLQuery1.ApplyUpdates;
+    dm1.SQLQuery1.ApplyUpdates;
     dm1.SQLTransaction1.CommitRetaining;
 
   //DM1.SQLTransaction1.StartTransaction;
