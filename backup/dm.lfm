@@ -1,9 +1,9 @@
 object DM1: TDM1
   OldCreateOrder = False
-  Height = 753
-  HorizontalOffset = 672
-  VerticalOffset = 425
-  Width = 638
+  Height = 503
+  HorizontalOffset = 1392
+  VerticalOffset = 249
+  Width = 597
   PPI = 144
   object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
@@ -256,11 +256,6 @@ object DM1: TDM1
     Database = IBConnection1
     Left = 312
     Top = 144
-  end
-  object DataSource1: TDataSource
-    DataSet = SQLQuery1
-    Left = 288
-    Top = 304
   end
   object IBConnection1: TIBConnection
     Connected = False

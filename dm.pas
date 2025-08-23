@@ -12,7 +12,6 @@ type
   { TDM1 }
 
   TDM1 = class(TDataModule)
-    DataSource1: TDataSource;
     IBConnection1: TIBConnection;
     SQLQuery1: TSQLQuery;
     SQLQuery1ADDRESS: TStringField;

@@ -1,9 +1,9 @@
 object DM1: TDM1
   OldCreateOrder = False
-  Height = 753
-  HorizontalOffset = 672
-  VerticalOffset = 425
-  Width = 638
+  Height = 503
+  HorizontalOffset = 1675
+  VerticalOffset = 192
+  Width = 597
   PPI = 144
   object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
@@ -109,6 +109,13 @@ object DM1: TDM1
       'SET'
       '  company_name = :company_name,'
       '  company_ceo = :company_ceo,'
+      '  manager = :manager,'
+      '  phone_primary = :phone_primary,'
+      '  phone_secondary = :phone_secondary,'
+      '  fax = :fax,'
+      '  address = :address,'
+      '  email = :email,'
+      '  items = :items,'
       '  keywords = :keywords,'
       '  memo = :memo'
       ''
@@ -256,11 +263,6 @@ object DM1: TDM1
     Database = IBConnection1
     Left = 312
     Top = 144
-  end
-  object DataSource1: TDataSource
-    DataSet = SQLQuery1
-    Left = 288
-    Top = 304
   end
   object IBConnection1: TIBConnection
     Connected = False
